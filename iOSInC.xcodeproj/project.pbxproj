@@ -12,7 +12,8 @@
 		AE51C56329230B4700B10869 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE51C56229230B4600B10869 /* UIKit.framework */; };
 		AE51C56529230B4D00B10869 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE51C56429230B4D00B10869 /* CoreGraphics.framework */; };
 		AE51C5672923101200B10869 /* app_delegate.c in Sources */ = {isa = PBXBuildFile; fileRef = AE51C5662923101200B10869 /* app_delegate.c */; };
-		AE51C5692923180200B10869 /* View.c in Sources */ = {isa = PBXBuildFile; fileRef = AE51C5682923180200B10869 /* View.c */; };
+		AE51C5692923180200B10869 /* view.c in Sources */ = {isa = PBXBuildFile; fileRef = AE51C5682923180200B10869 /* view.c */; };
+		AEE49BD6292521910009E8F5 /* ui_builder.c in Sources */ = {isa = PBXBuildFile; fileRef = AEE49BD5292521910009E8F5 /* ui_builder.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +24,9 @@
 		AE51C56229230B4600B10869 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AE51C56429230B4D00B10869 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		AE51C5662923101200B10869 /* app_delegate.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = app_delegate.c; sourceTree = "<group>"; };
-		AE51C5682923180200B10869 /* View.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = View.c; sourceTree = "<group>"; };
+		AE51C5682923180200B10869 /* view.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = view.c; sourceTree = "<group>"; };
+		AEE49BD4292521910009E8F5 /* ui_builder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ui_builder.h; sourceTree = "<group>"; };
+		AEE49BD5292521910009E8F5 /* ui_builder.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ui_builder.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +66,9 @@
 				AE51C5572923041300B10869 /* Info.plist */,
 				AE51C5582923041300B10869 /* main.c */,
 				AE51C5662923101200B10869 /* app_delegate.c */,
-				AE51C5682923180200B10869 /* View.c */,
+				AE51C5682923180200B10869 /* view.c */,
+				AEE49BD4292521910009E8F5 /* ui_builder.h */,
+				AEE49BD5292521910009E8F5 /* ui_builder.c */,
 			);
 			path = iOSInC;
 			sourceTree = "<group>";
@@ -145,7 +150,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE51C5692923180200B10869 /* View.c in Sources */,
+				AE51C5692923180200B10869 /* view.c in Sources */,
+				AEE49BD6292521910009E8F5 /* ui_builder.c in Sources */,
 				AE51C5672923101200B10869 /* app_delegate.c in Sources */,
 				AE51C5592923041300B10869 /* main.c in Sources */,
 			);

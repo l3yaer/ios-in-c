@@ -11,4 +11,6 @@ int main(int argc, char * argv[])
     UIApplicationMain(argc, argv, nil, CFSTR("AppDelegate"));
 
     objc_msgSend(auto_release_pool, sel_registerName("drain"));
+
+    return 0;
 }

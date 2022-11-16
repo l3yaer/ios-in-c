@@ -2,7 +2,7 @@
 #include <objc/message.h>
 #include <CoreGraphics/CoreGraphics.h>
 
-typedef struct CGRect (*sendRectFn)(id receiver, SEL operation);
+#include "ui_builder.h"
 
 struct AppDel {
     Class isa;
@@ -10,9 +10,9 @@ struct AppDel {
     id window;
 };
 
-BOOL AppDel_didFinishLaunching(struct AppDel *self, SEL _cmd, void *application, void *options)
+static BOOL did_finish_launching(struct AppDel *self, SEL _cmd, void *application, void *options)
 {
-    struct CGRect screen_bounds = ((sendRectFn) objc_msgSend_stret)(objc_msgSend(objc_getClass("UIScreen"), sel_getUid("mainScreen")), sel_getUid("bounds"));
+    struct CGRect screen_bounds = ((msgRectFn) objc_msgSend_stret)(objc_msgSend(objc_getClass("UIScreen"), sel_getUid("mainScreen")), sel_getUid("bounds"));
 
     self->window = objc_msgSend(objc_getClass("UIWindow"), sel_getUid("alloc"));
     self->window = objc_msgSend(self->window, sel_getUid("initWithFrame:"), screen_bounds);
@@ -37,7 +37,7 @@ static void initAppDel()
 
     class_addIvar(AppDelClass, "window", sizeof(id), 0, "@");
 
-    class_addMethod(AppDelClass, sel_getUid("application:didFinishLaunchingWithOptions:"), (IMP) AppDel_didFinishLaunching, "i@:@@");
+    class_addMethod(AppDelClass, sel_getUid("application:didFinishLaunchingWithOptions:"), (IMP) did_finish_launching, "i@:@@");
 
     objc_registerClassPair(AppDelClass);
 }
